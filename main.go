@@ -48,5 +48,10 @@ func main() {
 	// r.OPTIONS("/", OptionsHomePage)
 	//r.GET("/query", account.QueryString)              // /query?name=sanjay&age=28
 	//r.GET("/path/:name/:age", account.PathParameters) // /path/sanjay/28
-	r.Run()
+	err := r.RunTLS(":8080", "cert/MwServerCA.crt", "cert/MwServerCA.key")
+	if err != nil {
+		log.Println("Certificate error.")
+		return
+	}
+
 }

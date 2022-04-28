@@ -1,1 +1,7 @@
 .idea
+*.crt
+*.key
+*.pem
+*.srl
+*.csr
+cert/domains.ext
